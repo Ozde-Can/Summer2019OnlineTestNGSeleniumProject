@@ -6,7 +6,11 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class MyFirstSeleniumScript {
     public static void main(String[] args) {
-        //we have to setup webdriver based on the browser that we gonna use
+     // we have to setup webdriver based on the browser that we gonna use
+    //  old way of configuring webdriver
+   //   System.setProperty("webdriver.chrome.driver","/path/chromedriver");
+  //    better way to setup webdriver
+  //    because any platform and any version is available in a one line of code
         WebDriverManager.chromedriver().setup();
         //we need to create an object of appropriate class
         ChromeDriver driver = new ChromeDriver();
@@ -23,7 +27,6 @@ public class MyFirstSeleniumScript {
         }else {
             System.out.println("Test failed");
         }
-
 
         //to close the browser
         //at the end of test execution
