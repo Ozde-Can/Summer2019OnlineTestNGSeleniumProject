@@ -10,9 +10,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 public class ExcelUtil {
-
     private Sheet workSheet;
     private Workbook workBook;
     private String path;
@@ -79,6 +77,7 @@ public class ExcelUtil {
 
     }
 
+
     public List<Map<String, String>> getDataList() {
         // get all columns
         List<String> columns = getColumnsNames();
@@ -140,13 +139,11 @@ public class ExcelUtil {
     }
 
     public int columnCount() {
-
         return workSheet.getRow(0).getLastCellNum();
     }
 
     public int rowCount() {
         return workSheet.getLastRowNum() + 1;
-
     }
 }
 

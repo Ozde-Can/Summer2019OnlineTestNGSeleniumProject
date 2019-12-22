@@ -6,12 +6,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class BrowserFactory {
+
     //we gonna create a method
-    //that will return a driver object
+    //that will return a webdriver object
     //this method will take one parameter - String browser
     //based on the value of the browser parameter
-    //method will return corresponded webdriver object  (karsilik gelen webdriver nesnesini dondur)
-    //if browser = chrome, then return chromedriver object
+    //method will return corresponded webdriver object
+    // if browser = chrome, then return chromedriver object
     public static WebDriver getDriver(String browser) {
         if (browser.equalsIgnoreCase("chrome")) {
             WebDriverManager.chromedriver().setup();
@@ -22,6 +23,5 @@ public class BrowserFactory {
         }
         WebDriverManager.chromedriver().setup();
         return new ChromeDriver();
-
     }
 }

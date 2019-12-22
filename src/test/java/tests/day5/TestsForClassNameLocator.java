@@ -15,13 +15,10 @@ public class TestsForClassNameLocator {
 //        <h3 class="h3">Multiple buttons</h3>
 //        h3 - it's a class name, or value of class attribute
 //        if class has text with a space, that means it's two classes
-        //
-        WebElement heading = driver.findElement(By.className("h3"));
+
+      WebElement heading = driver.findElement(By.className("h3"));
 //       we can read the text of attribute
-        System.out.println(heading.getText());
-
-
-
+      System.out.println(heading.getText());
 
         driver.quit();
     }

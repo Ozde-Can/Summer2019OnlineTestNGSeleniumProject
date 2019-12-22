@@ -27,6 +27,8 @@ import utils.BrowserFactory;
             driver.quit();
         }
 
+
+
         @Test(description = "Verify title of google.com", priority = 2)
         public void test1(){
             System.out.println("Test 1");
@@ -54,8 +56,10 @@ import utils.BrowserFactory;
             System.out.println("Test passed!");
         }
 
+
+
         //   data provider can supply test with a test data. Also, it allows to do Data Driven Testing.
-//   What is this? It's when same test runs multiple times with different test data set
+        //   What is this? It's when same test runs multiple times with different test data set
         @DataProvider(name = "testData")
         public static Object[][] testData(){
             return new Object[][]{{"https://www.apple.com/", "Apple"}, //1st set of data

@@ -6,9 +6,7 @@ import org.testng.annotations.Test;
 import pages.LoginPage;
 import tests.TestBase;
 
-
 public class SmokeTest extends TestBase {
-
     @Test(dataProvider = "navigationInfo")
     public void smokeTest(String moduleName, String subModuleName, String pageSubTitle) {
         extentTest = extentReports.createTest("Verify that page subtitle is equals to " + pageSubTitle);
@@ -17,15 +15,13 @@ public class SmokeTest extends TestBase {
         loginPage.login("storemanager85", "UserUser123");
 
         loginPage.navigateTo(moduleName, subModuleName);
-
         loginPage.waitUntilLoaderMaskDisappear();
-
+        //wait for page subtitle
+        loginPage.waitForPageSubTitle(pageSubTitle);
         Assert.assertEquals(loginPage.getPageSubTitle(), pageSubTitle);
 
         extentTest.pass("Verified that page subtitle '" + pageSubTitle + "' is displayed");
-
     }
-
     @DataProvider(name = "navigationInfo")
     public Object[][] navigationInfo() {
         return new Object[][]{

@@ -100,10 +100,6 @@ public class BrowserUtils {
         //where screenshot will be stored
         //System.getProperty("user.dir") returns path to the project as a string
         String target = System.getProperty("user.dir") + "/test-output/Screenshots/" + name + date + ".png";
-        //if it doesn't take screenshot in any way, remove date and time part
-        //for some user it makes problems
-        String target2 = System.getProperty("user.dir") + "/test-output/Screenshots/" + name + ".png";
-
         File finalDestination = new File(target);
         // save the screenshot to the path given
         try {
@@ -114,10 +110,6 @@ public class BrowserUtils {
         return target;
     }
 
-
-
-
-
     /**
      * Wait 15 seconds with polling interval of 200 milliseconds then click
      *
@@ -126,7 +118,7 @@ public class BrowserUtils {
     public static void clickWithWait(WebElement webElement) {
         Wait wait = new FluentWait<>(Driver.get())
                 .withTimeout(Duration.ofSeconds(15))
-                .pollingEvery(Duration.ofMillis(200))
+                .pollingEvery(Duration.ofMillis(800))
                 .ignoring(NoSuchElementException.class)
                 .ignoring(ElementNotVisibleException.class)
                 .ignoring(ElementClickInterceptedException.class)
@@ -142,7 +134,6 @@ public class BrowserUtils {
             } catch (InterruptedException ex) {
                 ex.printStackTrace();
             }
-            element.click();
         }
     }
 
@@ -153,13 +144,23 @@ public class BrowserUtils {
      */
     public static void waitForPageToLoad(long timeOutInSeconds) {
         ExpectedCondition<Boolean> expectation = driver -> ((JavascriptExecutor) driver).executeScript("return document.readyState").equals("complete");
-        ExpectedCondition<Boolean> expectation2 = driver -> ((JavascriptExecutor) driver).executeScript("return jQuery.active == 0").equals(true);
         try {
             WebDriverWait wait = new WebDriverWait(Driver.get(), timeOutInSeconds);
             wait.until(expectation);
-            wait.until(expectation2);
         } catch (Throwable error) {
             error.printStackTrace();
         }
     }
+
+    /**
+     * Wait for proper page title
+     *
+     * @param pageTitle
+     */
+    public static void waitForPageTitle(String pageTitle) {
+        WebDriverWait wait = new WebDriverWait(Driver.get(), 10);
+        wait.until(ExpectedConditions.titleIs(pageTitle));
+
+    }
+
 }

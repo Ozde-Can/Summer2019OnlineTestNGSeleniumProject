@@ -53,7 +53,7 @@ public class TestNGPractice {
         //assertTrue - method that checks if something is true
         //if it's false, you will get exception
         //.isDisplayed() return true or false
-        //if it returns true - that means element is visible
+        //if it returns true - that means element is visible, message is invisible!!
         //if this method returns false - element is not visible
         Assert.assertTrue(heading.isDisplayed(), "Element is not visible");
         driver.quit();

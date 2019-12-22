@@ -2,7 +2,6 @@ package tests.day1;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class MyFirstSeleniumScript {
     public static void main(String[] args) {
@@ -16,8 +15,9 @@ public class MyFirstSeleniumScript {
         ChromeDriver driver = new ChromeDriver();
         //let's open google.com
         //.get() method allows to open some website
-        driver.get("http://google.com");
+        driver.get("http://google.com");//OUR FIRST COMMENT
         //to read page title, there is method .getTitle()
+
 
         //Test 1. Verify that title of the page is a "Google"
         String actualResult = driver.getTitle();

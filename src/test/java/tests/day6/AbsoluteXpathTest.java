@@ -18,7 +18,8 @@ public class AbsoluteXpathTest {
         BrowserUtils.wait(2);
         WebElement warningMessage = driver.findElement(By.xpath("/html/body/table/tbody/tr[2]/td/div/div/div[2]"));
         //for windows , just use control instead of command
-        //command + c - copy, command + v - paste, command + x  - cut, command + z - step back (changes), command + z + shift - step forward
+        //command + c - copy, command + v - paste, command + x  - cut,
+        // command + z - step back (changes), command + z + shift - step forward
         //PLEASE USE ONLY CHROME BROWSER
         System.out.println(warningMessage.getText()); // to read the text of warning message
         //to end the test execution

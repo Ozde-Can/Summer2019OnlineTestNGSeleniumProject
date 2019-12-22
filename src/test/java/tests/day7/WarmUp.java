@@ -15,10 +15,10 @@ public class WarmUp {
         //how to find all links?
         //every link as a tag name <a>
         List<WebElement> links = driver.findElements(By.xpath("//a"));
-        //size of the list = number of links
+        // size of the list = number of links
         // findElement vs findElements
-        // in case of find element, if there is no element found, you will exception
-        //NoSuchElementException
+        // in case of find element, if there is no element found, you will get exception
+        // NoSuchElementException
         // findElement = only 1 webelements
         // findElements = 0 or more elements.
         // if list is empty, that means that element is not there
@@ -28,9 +28,9 @@ public class WarmUp {
         //what if I want to print text of all links, one by one
         //loop through the collection of links
         for(WebElement webElement: links){
-            //print text of every links
-            //if text is there
-            if(!webElement.getText().isEmpty()) {
+            // print text of every links
+            // if text is there
+          if(!webElement.getText().isEmpty()) {   //for not empty!!!
                 System.out.println(webElement.getText());
             }
         }

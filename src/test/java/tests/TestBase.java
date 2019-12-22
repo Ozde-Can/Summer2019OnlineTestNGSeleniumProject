@@ -27,9 +27,11 @@ public abstract class TestBase {
     //    Defines a test. You can add logs, snapshots, assign author and categories to a test and its children.
     protected static ExtentTest extentTest;
 
-    //        <parameter name="test" value="regression"></parameter>
-    @BeforeTest
+
+    //         <parameter name="test" value="regression"></parameter>
+
     @Parameters({"test", "env_url"})
+    @BeforeTest
     public void beforeTest(@Optional String test, @Optional String env_url) {
         //location of report
         //it's gonna be next to target folder, test-output folder
@@ -60,8 +62,9 @@ public abstract class TestBase {
     }
 
     //        <parameter name="env_url" value="https://qa3.vytrack.com/"></parameter>
-    @BeforeMethod
+
     @Parameters("env_url")
+    @BeforeMethod
     public void setup(@Optional String env_url) {
         String url = ConfigurationReader.getProperty("url");
         //if name parameter was set, then use it

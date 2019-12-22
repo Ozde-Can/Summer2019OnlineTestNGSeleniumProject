@@ -17,12 +17,13 @@ public class TestsForLinkText {
 //        it works only if tag name is <a>
 //        if you want to use linkText or partialLinkText locator strategy
 //        element must start with <a>
-//        this is how we specify linkd in HTML
+//        this is how we specify linked in HTML
         driver.findElement(By.linkText("Autocomplete")).click();
 
         Thread.sleep(3000);
 
         driver.quit();
+
     }
 
 }

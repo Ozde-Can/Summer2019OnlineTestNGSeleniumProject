@@ -3,6 +3,7 @@ package tests.day6;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import utils.BrowserFactory;
+import utils.BrowserUtils;
 
 public class BitrixLogin {
 
@@ -24,8 +25,11 @@ public class BitrixLogin {
         // * matches any element
         //it's better to specify tag name, to avoid issues with finding element
         driver.findElement(By.xpath("//*[@placeholder='Password']")).sendKeys("UserUser");
+        //click on login button
+        driver.findElement(By.xpath("//input[starts-with(@value, 'Log')]")).click();
+        BrowserUtils.wait(3);
+        driver.quit();
 
-        driver.findElement(By.xpath("//input"));
     }
 
 }

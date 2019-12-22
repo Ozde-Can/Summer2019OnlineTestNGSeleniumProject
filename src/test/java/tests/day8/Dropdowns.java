@@ -10,24 +10,27 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import utils.BrowserFactory;
 import utils.BrowserUtils;
-import java.util.List;
 
+import java.util.List;
 
 
 public class Dropdowns {
 
     private WebDriver driver;
-    //   <select id="dropdown">
+
+//     <select id="dropdown">
 //      <option value="" disabled="disabled" selected="selected">Please select an option</option>
 //      <option value="1">Option 1</option>
 //      <option value="2">Option 2</option>
-//    </select>
+//      </select>
+
     @BeforeMethod
     public void setup() {
         driver = BrowserFactory.getDriver("chrome");
         driver.get("http://practice.cybertekschool.com/");
         driver.findElement(By.linkText("Dropdown")).click();
     }
+
     @Test(description = "Select option 2 from the dropdown")
     public void test1() {
         // to work with select dropdowns, we need to use Select class in Selenium
@@ -45,6 +48,7 @@ public class Dropdowns {
         //select.getFirstSelectedOption() - to get selected option/this is what is selected
         Assert.assertEquals(select.getFirstSelectedOption().getText(), "Option 2");
     }
+
     @Test(description = "Print list of states")
     public void test2() {
         WebElement state = driver.findElement(By.id("state"));
@@ -55,6 +59,7 @@ public class Dropdowns {
             System.out.println(option.getText());
         }
     }
+
     @Test(description = "Select your state and verify that state is selected")
     public void test3() {
         WebElement state = driver.findElement(By.id("state"));
@@ -65,6 +70,7 @@ public class Dropdowns {
         BrowserUtils.wait(2);
         Assert.assertEquals(select.getFirstSelectedOption().getText(), "Maryland");
     }
+
     @AfterMethod
     public void teardown() {
         driver.quit();

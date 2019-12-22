@@ -17,6 +17,7 @@ public class MultipleButtonsTests {
         driver.get("http://practice.cybertekschool.com/multiple_buttons");
     }
 
+
     @Test
     public void verifyButton1(){
         String expectedResult = "Clicked on button one!";
@@ -33,6 +34,13 @@ public class MultipleButtonsTests {
         Assert.assertEquals(actualResult, expectedResult, "Result is wrong!");
     }
 
+    @Test
+    public void verifyButton3(){
+        String expectedResult = "Clicked on button three!";
+        driver.findElement(By.id("button_check")).click();
+        String actualResult = driver.findElement(By.cssSelector("#result")).getText();
+        Assert.assertEquals(actualResult, expectedResult, "Result is not correct!!");
+    }
 
     @AfterMethod
     public void teardown(){

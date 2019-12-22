@@ -18,9 +18,14 @@ public class LocatorsReview {
         driver = BrowserFactory.getDriver("chrome");
         driver.get("http://practice.cybertekschool.com/");
     }
-    //    nth-of-type(n) selector matches every element that is the nth child, of a particular type, of its parent. n can be a number, a keyword, or a formula.
-//    Tip: Look at the :nth-child() selector to select the element that is the nth child, regardless of type, of its parent.
-//  we have: id, name, tag name, class name, link text, partial link text, xpath, css selector
+
+
+
+    //    nth-of-type(n) selector matches every element that is the nth child,
+    //    of a particular type, of its parent. n can be a number, a keyword, or a formula.
+    //    Tip: Look at the :nth-child() selector to select the element that is the nth child, regardless of type, of its parent.
+    //    we have: id, name, tag name, class name, link text, partial link text, xpath, css selector
+
     @Test(description = "Verify checkboxes")
     public void test1(){
         driver.findElement(By.linkText("Checkboxes")).click();
@@ -43,6 +48,7 @@ public class LocatorsReview {
 //                    throw new RuntimeException("Expected true but was false")
 //        }
     }
+
 
     @Test(description = "Radio buttons test")
     public void test2(){

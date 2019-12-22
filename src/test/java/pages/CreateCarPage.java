@@ -80,10 +80,5 @@ public class CreateCarPage extends BasePage {
     public void uploadLogo(String pathToTheFile){
         BrowserUtils.waitForVisibility(logoElement, 15);
         logoElement.sendKeys(pathToTheFile);
-
     }
-
 }
-
-
-

@@ -10,6 +10,7 @@ public class AnnotationsTest {
     public void beforeClass() {
         System.out.println("Before class!");
     }
+
     //runs only ones after afterMethod, and after all tests
     @AfterClass
     public void afterClass(){
@@ -26,9 +27,11 @@ public class AnnotationsTest {
 
     // runs automatically after every test
     @AfterMethod
-    public void teardown() {
+    public void teardown() {  //teardown is common usage, it is like a close driver!!!
         System.out.println("After Method!");
     }
+
+
 
     @Test
     public void test1() {
@@ -45,4 +48,6 @@ public class AnnotationsTest {
     public void test3() {
         System.out.println("Test 3!");
     }
+
+
 }
