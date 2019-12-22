@@ -50,13 +50,15 @@ public class LocatorsReview {
     }
 
 
+
     @Test(description = "Radio buttons test")
     public void test2(){
         driver.findElement(By.linkText("Radio Buttons")).click();
-        //
         WebElement blueButton = driver.findElement(By.xpath("//*[text()='Blue']/preceding-sibling::input[@type='radio']"));
         Assert.assertTrue(blueButton.isSelected(), "Blue button is not selected");
     }
+
+
 
     @AfterMethod
     public void teardown(){
@@ -71,7 +73,7 @@ public class LocatorsReview {
 //<label>Blue</label>
 //</div>
 //
-//        input and label are siblings.
+//      input and label are siblings.
 //
 ////*[text()='Blue']/.. - to go to the parent element - div
 //
@@ -79,5 +81,5 @@ public class LocatorsReview {
 //
 ////input[@type='radio']/following-sibling::label - go to label.
 //
-//        /following-sibling::tagName/*
+//                      /following-sibling::tagName/*
 ///preceding-sibling::tagName/*
