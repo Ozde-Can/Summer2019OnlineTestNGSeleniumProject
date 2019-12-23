@@ -21,15 +21,18 @@ public class WindowSwitching {
         driver.manage().window().maximize();
     }
 
+
     @Test(description = "Verify that title is still Practice")
     public void test1() {
         driver.findElement(By.linkText("New tab")).click();
         //after 3 seconds, another website will be opened,in the second window
         //selenium doesn't switch automatically to the new window
-        BrowserUtils.wait(5);
+        BrowserUtils.wait(3);
         System.out.println(driver.getTitle());
         Assert.assertEquals(driver.getTitle(), "Practice", "Title is wrong!");
     }
+
+
 
     @Test(description = "Verify that user is able to see new window")
     public void test2() {
@@ -38,7 +41,7 @@ public class WindowSwitching {
         String oldWindow = driver.getWindowHandle();
         //after 3 seconds, another website will be opened,in the second window
         //selenium doesn't switch automatically to the new window
-        BrowserUtils.wait(5);
+        BrowserUtils.wait(3);
         //in the selenium every window has an id. That id calls window handle
         //to read window handle we use a method getWindowHandle()
         //after new window was opened, we can get list of all window id's/window handles

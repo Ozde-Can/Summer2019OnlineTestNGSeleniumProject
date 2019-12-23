@@ -24,12 +24,12 @@ public class FileUploading {
     public void test1() {
         driver.findElement(By.linkText("File Upload")).click();
         //provide path to the file
-        //insert your path to the file
-        driver.findElement(By.id("file-upload")).sendKeys("/Users/zeynepcan/Desktop/Screen Shot 2019-11-15 at 5.35.36 PM.png");
+        ////////insert your path to the file into sendKeys() method////////
+        driver.findElement(By.id("file-upload")).sendKeys("/Users/zeynepcan/Desktop/practice.txt");
         //click submit
         driver.findElement(By.id("file-submit")).click();
         BrowserUtils.wait(4);
-        String expectedFileName = "Screen Shot 2019-11-15 at 5.35.36 PM.png";
+        String expectedFileName = "practice.txt";
         String actualFileName = driver.findElement(By.id("uploaded-files")).getText();
         Assert.assertEquals(actualFileName, expectedFileName);
     }
